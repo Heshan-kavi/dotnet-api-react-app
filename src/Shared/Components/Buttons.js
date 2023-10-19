@@ -17,7 +17,7 @@ export const SecondaryButton = styled.button`
     padding: 0.25em 1em;
     border: 2px solid white;
     border-radius: 3px;
-    background: BF4F74;
+    background: #BF4F74;
 `;
 
 export const LoginButton = styled(PrimaryButton)`
