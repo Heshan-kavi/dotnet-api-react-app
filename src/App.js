@@ -1,5 +1,5 @@
 import './App.css';
-import {Button, LoginButton, SignupButton} from './Shared/Components/Buttons';
+import {PrimaryButton, SecondaryButton, LoginButton, SignupButton} from './Shared/Components/Buttons';
 
 function App() {
   return (
@@ -10,7 +10,11 @@ function App() {
       <h2>
         Usual buttons
       </h2>
-      <Button>Primary Button</Button>
+      <PrimaryButton>Primary Button</PrimaryButton>
+      <h2>
+        Second Usual buttons
+      </h2>
+      <SecondaryButton>Secondary Button</SecondaryButton>
       <h2>
         Login button
       </h2>
