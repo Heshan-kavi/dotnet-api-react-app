@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const PrimaryButton = styled.button`
     color: #BF4F74;
     font-size: 1em;
+    font-family: Fjalla One;
     margin: 1em;
     padding: 0.25em 1em;
     border: 2px solid #BF4F74;
@@ -13,6 +14,7 @@ export const PrimaryButton = styled.button`
 export const SecondaryButton = styled.button`
     color: white;
     font-size: 1em;
+    font-family: Fjalla One;
     margin: 1em;
     padding: 0.25em 1em;
     border: 2px solid white;
