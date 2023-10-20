@@ -1,9 +1,19 @@
 import './App.css';
+import { TopNavigation, AnchorTag } from './Shared/Components/TopNavigation';
 import {PrimaryButton, SecondaryButton, LoginButton, SignupButton} from './Shared/Components/Buttons';
 
 function App() {
   return (
     <div className="App">
+      <h1>
+        navigation
+      </h1>
+      <TopNavigation>
+        <AnchorTag href="#news">toggle</AnchorTag>
+        <AnchorTag href="#news">news</AnchorTag>
+        <AnchorTag href="#news">about</AnchorTag>
+        <AnchorTag href="#news">help</AnchorTag>
+      </TopNavigation>
       <h1>
         testing buttons
       </h1>
