@@ -16,7 +16,7 @@ function SideNavigation (props){
             <button onClick={onOpenClickHandler}><FaIcons.FaBars/></button>
             <nav className={isSideBarOpen ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-items">
-                    <li onClick={onOpenClickHandler}><AiIcons.AiOutlineClose/></li>
+                    <li onClick={onOpenClickHandler} style={{fontWeight: 800, backgroundColor: "white"}}>Close</li>
                     <li>Home</li>
                     <li>About</li>
                 </ul>

@@ -21,7 +21,9 @@
 }
 
 .nav-menu-items li{
-    margin-bottom: 20px;
+    width: 250px;
+    height: 50px;
+    padding-top: 25px;
 }
 
 .nav-menu-items li:hover{
