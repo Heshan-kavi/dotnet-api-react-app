@@ -1,12 +1,16 @@
 import './App.css';
+import React, { useState } from "react";
 import { TopNavigation, AnchorTag } from './Shared/Components/TopNavigation';
 import {PrimaryButton, SecondaryButton, LoginButton, SignupButton} from './Shared/Components/Buttons';
+import SideNavigation from './Shared/Components/SideNavigation';
+import * as FaIcons from "react-icons/fa";
 
 function App() {
+
   return (
     <div className="App">
       <h1>
-        navigation
+        Top navigation
       </h1>
       <TopNavigation>
         <AnchorTag href="#news">toggle</AnchorTag>
@@ -15,7 +19,11 @@ function App() {
         <AnchorTag href="#news">help</AnchorTag>
       </TopNavigation>
       <h1>
-        testing buttons
+        Side navigation
+      </h1>
+      <SideNavigation/>
+      <h1>
+        Testing buttons
       </h1>
       <h2>
         Usual buttons
