@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import { styled } from "styled-components";
 import { PrimaryButton } from "./Buttons";
-import './SideNavigation.css';
 
 const Ul = styled.ul`
     list-style-type: none;

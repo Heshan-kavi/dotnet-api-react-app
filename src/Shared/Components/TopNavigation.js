@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 import * as FaIcons from "react-icons/fa";
-import SideNavigation from "./SideNavigation";
 
 export const AnchorTag = styled.a`
     float: left;
