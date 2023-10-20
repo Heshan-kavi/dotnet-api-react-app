@@ -1,9 +1,8 @@
 import './App.css';
-import React, { useState } from "react";
-import { TopNavigation, AnchorTag } from './Shared/Components/TopNavigation';
+import React from "react";
+import TopNavigation from './Shared/Components/TopNavigation';
 import {PrimaryButton, SecondaryButton, LoginButton, SignupButton} from './Shared/Components/Buttons';
 import SideNavigation from './Shared/Components/SideNavigation';
-import * as FaIcons from "react-icons/fa";
 
 function App() {
 
@@ -12,12 +11,7 @@ function App() {
       <h1>
         Top navigation
       </h1>
-      <TopNavigation>
-        <AnchorTag href="#news">toggle</AnchorTag>
-        <AnchorTag href="#news">news</AnchorTag>
-        <AnchorTag href="#news">about</AnchorTag>
-        <AnchorTag href="#news">help</AnchorTag>
-      </TopNavigation>
+      <TopNavigation/>
       <h1>
         Side navigation
       </h1>
