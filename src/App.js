@@ -1,21 +1,23 @@
 import './App.css';
-import { TopNavigation, AnchorTag } from './Shared/Components/TopNavigation';
+import React from "react";
+import TopNavigation from './Shared/Components/TopNavigation';
 import {PrimaryButton, SecondaryButton, LoginButton, SignupButton} from './Shared/Components/Buttons';
+import SideNavigation from './Shared/Components/SideNavigation';
 
 function App() {
+
   return (
     <div className="App">
       <h1>
-        navigation
+        Top navigation
       </h1>
-      <TopNavigation>
-        <AnchorTag href="#news">toggle</AnchorTag>
-        <AnchorTag href="#news">news</AnchorTag>
-        <AnchorTag href="#news">about</AnchorTag>
-        <AnchorTag href="#news">help</AnchorTag>
-      </TopNavigation>
+      <TopNavigation/>
       <h1>
-        testing buttons
+        Side navigation
+      </h1>
+      <SideNavigation/>
+      <h1>
+        Testing buttons
       </h1>
       <h2>
         Usual buttons
