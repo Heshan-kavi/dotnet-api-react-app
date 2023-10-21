@@ -38,7 +38,9 @@ const lightTheme = {
     colors: {
       primary: "#BF4F74",
       success: "mediumseagreen",
-      danger: "red"
+      danger: "red",
+      warning: "darkorange",
+      default: "royalblue",
     }
   };
   const theme = {
