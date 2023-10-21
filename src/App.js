@@ -1,6 +1,7 @@
 import './App.css';
 import React from "react";
 import TopNavigation from './Shared/Components/TopNavigation';
+import { H1, H2 } from './Shared/Components/TextContent';
 import {PrimaryButton, SecondaryButton, LoginButton, SignupButton} from './Shared/Components/Buttons';
 import SideNavigation from './Shared/Components/SideNavigation';
 
@@ -8,36 +9,33 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
+      <H1>
         Top navigation
-      </h1>
+      </H1>
       <TopNavigation/>
-      <h1>
+      <H1>
         Side navigation
-      </h1>
+      </H1>
       <SideNavigation/>
-      <h1>
+      <H1>
         Testing buttons
-      </h1>
-      <h2>
+      </H1>
+      <H2>
         Usual buttons
-      </h2>
+      </H2>
       <PrimaryButton>Primary Button</PrimaryButton>
-      <h2>
+      <H2>
         Second Usual buttons
-      </h2>
+      </H2>
       <SecondaryButton>Secondary Button</SecondaryButton>
-      <h2>
+      <H2>
         Login button
-      </h2>
+      </H2>
       <LoginButton >Login Button</LoginButton>
-      <h2>
+      <H2>
         Signup button
-      </h2>
+      </H2>
       <SignupButton >Signup Button</SignupButton>
-      <h1>
-        Signup button
-      </h1>
     </div>
   );
 }
