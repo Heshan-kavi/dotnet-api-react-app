@@ -21,10 +21,10 @@ const lightTheme = {
 
   const defaultTheme = {
     fontSize: {
-      xs: "12px",
-      sm: "14px",
-      md: "16px",
-      lg: "18px",
+      xs: "14px",
+      sm: "16px",
+      md: "18x",
+      lg: "20px",
     },
     borderRadius: {
       small: "5px",
@@ -32,6 +32,14 @@ const lightTheme = {
       large: "15px",
       circle: "50%",
     },
+    letterSpacing: {
+      common: "1px",
+    },
+    colors: {
+      primary: "#BF4F74",
+      success: "mediumseagreen",
+      danger: "red"
+    }
   };
   const theme = {
     dark: {
