@@ -8,16 +8,16 @@ export const PrimaryButton = styled.button`
     padding: 0.25em 1em;
     border: 2px solid #BF4F74;
     border-radius: 3px;
-    background: white;
+    background: ${({ theme }) => theme.color.background};
 `;
 
 export const SecondaryButton = styled.button`
-    color: white;
+    color: ${({ theme }) => theme.color.background};
     font-size: 1em;
     font-family: Fjalla One;
     margin: 1em;
     padding: 0.25em 1em;
-    border: 2px solid white;
+    border: 2px solid ${({ theme }) => theme.color.background};
     border-radius: 3px;
     background: #BF4F74;
 `;
@@ -25,11 +25,11 @@ export const SecondaryButton = styled.button`
 export const LoginButton = styled(PrimaryButton)`
     color: mediumseagreen;
     border: 2px solid mediumseagreen;
-    background: white;
+    background: ${({ theme }) => theme.color.background};
 `;
 
 export const SignupButton = styled(PrimaryButton)`
-    color: white;
+    color: ${({ theme }) => theme.color.background};
     border: 2px solid mediumseagreen;
     background: mediumseagreen;
 `;

@@ -6,6 +6,7 @@ import {PrimaryButton, SecondaryButton, LoginButton, SignupButton} from './Share
 import SideNavigation from './Shared/Components/SideNavigation';
 import theme from './Shared/Components/Theme';
 import { ThemeProvider } from 'styled-components';
+import Background from './Shared/Components/BackGround';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme[currentTheme]}>
-      <div className="App">
+      <Background className='App'>
         <H1>
           Theme Changing
         </H1>
@@ -53,7 +54,7 @@ function App() {
           Signup button
         </H2>
         <SignupButton >Signup Button</SignupButton>
-    </div>
+      </Background>
     </ThemeProvider>
   );
 }
