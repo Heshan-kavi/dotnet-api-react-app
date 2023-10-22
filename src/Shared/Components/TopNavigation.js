@@ -10,17 +10,17 @@ export const AnchorTag = styled.a`
     font-size: 17px;
     &:hover,
     &:focus {
-        color: #BF4F74;
-        background-color: white;
+        color: ${({ theme }) => theme.colors.primary};
+        background-color: ${({ theme }) => theme.color.background};
     }
     &:active {
-        color: #BF4F74;
-        background-color: white;
+        color: ${({ theme }) => theme.colors.primary};
+        background-color: ${({ theme }) => theme.color.background};
     }
 `;
 
 export const TopNavigationBar = styled.div`
-    background-color: #BF4F74;
+    background-color: ${({ theme }) => theme.colors.primary};
     overflow: hidden;
 `;
 
