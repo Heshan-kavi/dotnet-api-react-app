@@ -8,10 +8,14 @@ import theme from './Shared/Components/Theme';
 import { StyleSheetManager, ThemeProvider } from 'styled-components';
 import Background from './Shared/Components/BackGround';
 import isValidProp from '@emotion/is-prop-valid';
+import {Piechart, StraightAnglePieChart} from './Shared/Components/Charts/PieChart';
+import { Grid } from './Shared/Components/Grid';
 
 function App() {
 
   const [currentTheme, setCurrentTheme] = useState("dark");
+  const [columns, setColumns] = useState(3);
+  const [rowheight, setRowheight] = useState('400px');
 
   function onThemeChangeButtonClicked(){
     if(currentTheme === "light"){
@@ -64,7 +68,11 @@ function App() {
           </P>
           <H1>
             Charts
-          </H1>
+          </H1>Piechart
+          <Grid columns={columns} rowheight={rowheight}>
+            <Piechart width="400" height="400"></Piechart>
+            <StraightAnglePieChart width="400" height="400"></StraightAnglePieChart>
+        </Grid>
         </Background>
       </ThemeProvider>
     </StyleSheetManager>
