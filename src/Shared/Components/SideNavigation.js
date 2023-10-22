@@ -15,7 +15,7 @@ const Li = styled.li`
     color: ${({ theme }) => theme.color.fontcolor};
     &:hover{
         background-color: ${({ theme }) => theme.color.background};
-        color: #BF4F74;
+        color: ${({ theme }) => theme.colors.primary};;
     }
 `;
 
@@ -27,12 +27,12 @@ const CloseLi = styled.li`
     color: ${({ theme }) => theme.color.fontcolor};
     background-color: ${({ theme }) => theme.color.background};
     &:hover{
-        color: #BF4F74;
+        color: ${({ theme }) => theme.colors.primary};;
     }
 `;
 
 const Nav = styled.nav`
-    background-color: #BF4F74;
+    background-color: ${({ theme }) => theme.colors.primary};;
     width: 250px;
     height: 100vh;
     display: flex;

@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from "react";
 import TopNavigation from './Shared/Components/TopNavigation';
-import { H1, H2 } from './Shared/Components/TextContent';
+import { H1, H2, P } from './Shared/Components/TextContent';
 import {PrimaryButton, SecondaryButton, LoginButton, SignupButton} from './Shared/Components/Buttons';
 import SideNavigation from './Shared/Components/SideNavigation';
 import theme from './Shared/Components/Theme';
@@ -54,6 +54,12 @@ function App() {
           Signup button
         </H2>
         <SignupButton >Signup Button</SignupButton>
+        <H1>
+          Testing paragraph
+        </H1>
+        <P>
+          this is the testing paragraph of this application
+        </P>
       </Background>
     </ThemeProvider>
   );
