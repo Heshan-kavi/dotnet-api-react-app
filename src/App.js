@@ -13,8 +13,7 @@ import {  TwoLevelPieChart,
           CustomActiveShapePieChart, 
           PieChartWithCustomizedLabel,
           PieChartWithPaddingAngleFull,
-          PieChartWithPaddingAngleHalf,
-          PieChartWithNeedle} from './Shared/Components/Charts/PieChart';
+          PieChartWithPaddingAngleHalf} from './Shared/Components/Charts/PieChart';
 import { Grid } from './Shared/Components/Grid';
 
 const Div = styled.div`
