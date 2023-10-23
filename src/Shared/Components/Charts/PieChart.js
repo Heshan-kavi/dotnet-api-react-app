@@ -1,5 +1,6 @@
 import React from "react";
 import { PieChart, Pie, ResponsiveContainer } from "recharts";
+import { useTheme } from "styled-components";
 
 const data01 = [
   { name: "Group A", value: 400 },
@@ -21,8 +22,14 @@ const data02 = [
   { name: "D2", value: 50 }
 ];
 
+function GetTheTheme() {
+  const theme = useTheme();
+  return theme;
+}
 
 export function TwoLevelPieChart (props){
+
+    // const theme = useTheme();
     return (
         <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
         <Pie
@@ -32,7 +39,8 @@ export function TwoLevelPieChart (props){
             cy={200}
             outerRadius={60}
             fill="#8884d8"
-            stroke="black"
+            stroke={GetTheTheme().color.background}
+            outline="none"
         />
         <Pie
             data={data02}
@@ -42,7 +50,8 @@ export function TwoLevelPieChart (props){
             innerRadius={70}
             outerRadius={90}
             fill="#82ca9d"
-            stroke="black"
+            stroke={GetTheTheme().color.background}
+            outline="none"
             label
         />
         </PieChart>
@@ -62,7 +71,7 @@ export function StraightAnglePieChart(props) {
             cy="50%"
             outerRadius={80}
             fill="#8884d8"
-            stroke="black"
+            stroke={GetTheTheme().color.background}
             label
           />
         </PieChart>
