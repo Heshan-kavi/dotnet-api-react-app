@@ -8,7 +8,12 @@ import theme from './Shared/Components/Theme';
 import { StyleSheetManager, ThemeProvider } from 'styled-components';
 import Background from './Shared/Components/BackGround';
 import isValidProp from '@emotion/is-prop-valid';
-import {TwoLevelPieChart, StraightAnglePieChart, CustomActiveShapePieChart} from './Shared/Components/Charts/PieChart';
+import {  TwoLevelPieChart, 
+          StraightAnglePieChart, 
+          CustomActiveShapePieChart, 
+          PieChartWithCustomizedLabel,
+          PieChartWithPaddingAngleFull,
+          PieChartWithPaddingAngleHalf} from './Shared/Components/Charts/PieChart';
 import { Grid } from './Shared/Components/Grid';
 
 function App() {
@@ -68,11 +73,32 @@ function App() {
           </P>
           <H1>
             Charts
-          </H1>Piechart
+          </H1>Piecharts
           <Grid columns={columns} rowheight={rowheight}>
-            <TwoLevelPieChart width="400" height="400"></TwoLevelPieChart>
-            <StraightAnglePieChart width="400" height="400"></StraightAnglePieChart>
-            <CustomActiveShapePieChart width="400" height="400"></CustomActiveShapePieChart>
+            <div style={{marginBottom: 0}}>
+              <p>Two Level Pie Chart</p>
+              <TwoLevelPieChart width="500" height="400"></TwoLevelPieChart>
+            </div>
+            <div style={{marginBottom: 0}}>
+              <p>Straight Angle Pie Chart</p>
+              <StraightAnglePieChart width="500" height="400"></StraightAnglePieChart>
+            </div>
+            <div style={{marginBottom: 0}}>
+              <p>Custom Active Shape Pie Chart</p>
+              <CustomActiveShapePieChart width="500" height="400"></CustomActiveShapePieChart>
+            </div>
+            <div style={{marginBottom: 0}}>
+              <p>Customized Labled Pie Chart</p>
+              <PieChartWithCustomizedLabel width="500" height="400"></PieChartWithCustomizedLabel>
+            </div>
+            <div style={{marginBottom: 0}}>
+              <p>Pie Chart With Padding - Full </p>
+              <PieChartWithPaddingAngleFull width="500" height="400"></PieChartWithPaddingAngleFull>
+            </div>
+            <div style={{marginBottom: 0}}>
+              <p>Pie Chart With Padding - Half</p>
+              <PieChartWithPaddingAngleHalf width="500" height="400"></PieChartWithPaddingAngleHalf>
+            </div>
         </Grid>
         </Background>
       </ThemeProvider>

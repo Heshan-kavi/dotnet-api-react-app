@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { PieChart, Pie, ResponsiveContainer, Sector } from "recharts";
+import { PieChart, Pie, ResponsiveContainer, Sector, Cell } from "recharts";
 import { useTheme } from "styled-components";
 
 const data01 = [
@@ -22,6 +22,7 @@ const data02 = [
   { name: "D2", value: 50 }
 ];
 
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 function GetTheTheme() {
   const theme = useTheme();
@@ -74,40 +75,53 @@ const renderActiveShapeForActiveShapePie = (props) => {
   );
 };
 
-export function TwoLevelPieChart (props){
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabelForCustomizedLabelPie = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-    // const theme = useTheme();
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
+
+export function TwoLevelPieChart (props){
     return (
+      <ResponsiveContainer>
         <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
-        <Pie
-            data={data01}
-            dataKey="value"
-            cx={200}
-            cy={200}
-            outerRadius={60}
-            fill="#8884d8"
-            stroke={GetTheTheme().color.background}
-            outline="none"
-        />
-        <Pie
-            data={data02}
-            dataKey="value"
-            cx={200}
-            cy={200}
-            innerRadius={70}
-            outerRadius={90}
-            fill="#82ca9d"
-            stroke={GetTheTheme().color.background}
-            outline="none"
-            label
-        />
+          <Pie
+              data={data01}
+              dataKey="value"
+              cx={200}
+              cy={200}
+              outerRadius={60}
+              fill="#8884d8"
+              stroke={GetTheTheme().color.background}
+              outline="none"
+          />
+          <Pie
+              data={data02}
+              dataKey="value"
+              cx={200}
+              cy={200}
+              innerRadius={70}
+              outerRadius={90}
+              fill="#82ca9d"
+              stroke={GetTheTheme().color.background}
+              outline="none"
+              label
+          />
         </PieChart>
+      </ResponsiveContainer>
     )
 }
 
 export function StraightAnglePieChart(props) {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="100%">
         <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
           <Pie
             dataKey="value"
@@ -153,4 +167,78 @@ export function CustomActiveShapePieChart (props) {
         </PieChart>
       </ResponsiveContainer>
   );
+}
+
+export function PieChartWithCustomizedLabel (props) {
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+        <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
+          <Pie
+            data={data01}
+            cx="50%"
+            cy="50%"
+            labelLine={false}
+            label={renderCustomizedLabelForCustomizedLabelPie}
+            outerRadius={80}
+            fill="#8884d8"
+            dataKey="value"
+            stroke={GetTheTheme().color.background}
+          >
+            {data01.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
+  );
+}
+
+export function PieChartWithPaddingAngleFull (props){
+  return (
+    <ResponsiveContainer>
+      <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
+        <Pie
+          data={data01}
+          cx="50%"
+          cy="50%"
+          innerRadius={60}
+          outerRadius={80}
+          fill="#8884d8"
+          paddingAngle={5}
+          dataKey="value"
+          stroke={GetTheTheme().color.background}
+        >
+          {data01.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+      </PieChart>
+    </ResponsiveContainer>
+  )
+}
+
+export function PieChartWithPaddingAngleHalf (props){
+  return (
+    <ResponsiveContainer>
+      <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
+        <Pie
+          data={data01}
+          cx="50%"
+          cy="50%"
+          startAngle={180}
+          endAngle={0}
+          innerRadius={60}
+          outerRadius={80}
+          fill="#8884d8"
+          paddingAngle={5}
+          dataKey="value"
+          stroke={GetTheTheme().color.background}
+        >
+          {data01.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+      </PieChart>
+    </ResponsiveContainer>
+  )
 }
