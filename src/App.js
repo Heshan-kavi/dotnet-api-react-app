@@ -8,7 +8,7 @@ import theme from './Shared/Components/Theme';
 import { StyleSheetManager, ThemeProvider } from 'styled-components';
 import Background from './Shared/Components/BackGround';
 import isValidProp from '@emotion/is-prop-valid';
-import {Piechart, StraightAnglePieChart} from './Shared/Components/Charts/PieChart';
+import {TwoLevelPieChart, StraightAnglePieChart} from './Shared/Components/Charts/PieChart';
 import { Grid } from './Shared/Components/Grid';
 
 function App() {
@@ -70,7 +70,7 @@ function App() {
             Charts
           </H1>Piechart
           <Grid columns={columns} rowheight={rowheight}>
-            <Piechart width="400" height="400"></Piechart>
+            <TwoLevelPieChart width="400" height="400"></TwoLevelPieChart>
             <StraightAnglePieChart width="400" height="400"></StraightAnglePieChart>
         </Grid>
         </Background>

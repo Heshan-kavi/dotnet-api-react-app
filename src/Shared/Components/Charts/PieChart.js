@@ -22,7 +22,7 @@ const data02 = [
 ];
 
 
-export function Piechart (props){
+export function TwoLevelPieChart (props){
     return (
         <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
         <Pie
