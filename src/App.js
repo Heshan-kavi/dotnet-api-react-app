@@ -33,8 +33,8 @@ function App() {
             </Background>
           </Theme>
         <Routes>
-          <Route path='/dashboard' element={<DashBoard/>}/>
-          <Route exact path='/' element={<Main/>}/>
+          <Route path='/dashboard' element={<DashBoard themeToUse={currentTheme}/>}/>
+          <Route exact path='/' element={<Main themeToUse={currentTheme}/>}/>
         </Routes>
       </BrowserRouter>
     </>
