@@ -1,3 +1,6 @@
+import { StyleSheetManager, ThemeProvider } from "styled-components";
+import isValidProp from '@emotion/is-prop-valid';
+
 const lightTheme = {
     primary: "#003366",
     secondary: "#eee",
@@ -43,7 +46,7 @@ const lightTheme = {
       default: "royalblue",
     }
   };
-  const theme = {
+  const customizedTheme = {
     dark: {
       color: darktheme,
       ...defaultTheme,
@@ -53,4 +56,12 @@ const lightTheme = {
       ...defaultTheme,
     },
   };
-  export default theme;
+
+  const Theme = ({ children, theme = 'dark' }) => (
+    <StyleSheetManager shouldForwardProp={active => isValidProp(active)}>
+      <ThemeProvider theme={customizedTheme[theme]}>{children}</ThemeProvider>
+    </StyleSheetManager>
+  );
+
+
+  export default Theme;

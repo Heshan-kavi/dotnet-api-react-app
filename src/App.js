@@ -1,9 +1,7 @@
 import './App.css';
 import React, { useState } from "react";
-import theme from './Shared/Components/Theme';
-import { StyleSheetManager, ThemeProvider } from 'styled-components';
+import Theme from './Shared/Components/Theme';
 import Background from './Shared/Components/BackGround';
-import isValidProp from '@emotion/is-prop-valid';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './Pages/Main';
 import { H1 } from './Shared/Components/TextContent';
@@ -20,24 +18,23 @@ function App() {
     }else{
       setCurrentTheme("light");
     }
+    localStorage.setItem("current-theme", JSON.stringify(currentTheme));
   }
 
   return (
     <>
       <BrowserRouter>
-        <StyleSheetManager shouldForwardProp={active => isValidProp(active)}>
-          <ThemeProvider theme={theme[currentTheme]}>
+          <Theme theme={currentTheme}>
             <Background className='App'>
               <H1>
                   Theme Changing
               </H1>
               <PrimaryButton onClick={onThemeChangeButtonClicked}>To Change the Theme</PrimaryButton>
-              <Main/>
             </Background>
-          </ThemeProvider>
-        </StyleSheetManager>
+          </Theme>
         <Routes>
           <Route path='/dashboard' element={<DashBoard/>}/>
+          <Route exact path='/' element={<Main/>}/>
         </Routes>
       </BrowserRouter>
     </>
