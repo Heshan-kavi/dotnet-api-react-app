@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from "react";
-import TopNavigation from '../Shared/Components/TopNavigation';
+import React from "react";
 import { H1, H2, P } from '../Shared/Components/TextContent';
 import { PrimaryButton, SecondaryButton, LoginButton, SignupButton } from '../Shared/Components/Buttons';
 import SideNavigation from '../Shared/Components/SideNavigation';
@@ -29,10 +28,6 @@ export default function Main (props){
     return (
         <Theme theme={currentTheme}>
             <Background>
-                <H1>
-                    Top navigation
-                </H1>
-                <TopNavigation/>
                 <H1>
                     Side navigation
                 </H1>

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Background from "../Shared/Components/BackGround";
 import { H1 } from "../Shared/Components/TextContent";
 import Theme from "../Shared/Components/Theme";

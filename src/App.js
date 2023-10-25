@@ -7,6 +7,7 @@ import Main from './Pages/Main';
 import { H1 } from './Shared/Components/TextContent';
 import { PrimaryButton } from './Shared/Components/Buttons';
 import DashBoard from './Pages/Dashboard';
+import TopNavigation from './Shared/Components/TopNavigation';
 
 function App() {
 
@@ -26,6 +27,10 @@ function App() {
       <BrowserRouter>
           <Theme theme={currentTheme}>
             <Background className='App'>
+              <H1>
+                Top navigation
+              </H1>
+              <TopNavigation/>
               <H1>
                   Theme Changing
               </H1>
