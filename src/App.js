@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './Pages/Main';
 import { H1 } from './Shared/Components/TextContent';
 import { PrimaryButton } from './Shared/Components/Buttons';
+import DashBoard from './Pages/Dashboard';
 
 function App() {
 
@@ -23,19 +24,20 @@ function App() {
 
   return (
     <>
-      <StyleSheetManager shouldForwardProp={active => isValidProp(active)}>
-        <ThemeProvider theme={theme[currentTheme]}>
-          <Background className='App'>
-            <H1>
-                Theme Changing
-            </H1>
-            <PrimaryButton onClick={onThemeChangeButtonClicked}>To Change the Theme</PrimaryButton>
-            <Main/>
-          </Background>
-        </ThemeProvider>
-      </StyleSheetManager>
       <BrowserRouter>
+        <StyleSheetManager shouldForwardProp={active => isValidProp(active)}>
+          <ThemeProvider theme={theme[currentTheme]}>
+            <Background className='App'>
+              <H1>
+                  Theme Changing
+              </H1>
+              <PrimaryButton onClick={onThemeChangeButtonClicked}>To Change the Theme</PrimaryButton>
+              <Main/>
+            </Background>
+          </ThemeProvider>
+        </StyleSheetManager>
         <Routes>
+          <Route path='/dashboard' element={<DashBoard/>}/>
         </Routes>
       </BrowserRouter>
     </>
