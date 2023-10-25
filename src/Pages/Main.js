@@ -19,22 +19,15 @@ const Div = styled.div`
   color: ${({ theme }) => theme.color.fontcolor};
 `;
 
-export default function Main (){
+export default function Main (props){
 
     const columns = 3;
     const rowheight = '400px';
 
-    const [selectedTheme, setSelectedTheme] = useState('light');
-
-    useEffect(() => {
-        const currentTheme = JSON.parse(localStorage.getItem("current-theme"));
-        if (currentTheme) {
-          setSelectedTheme(currentTheme);
-        }
-      }, []);
+    const currentTheme = props.themeToUse;
 
     return (
-        <Theme theme={selectedTheme}>
+        <Theme theme={currentTheme}>
             <Background>
                 <H1>
                     Top navigation
