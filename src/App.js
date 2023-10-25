@@ -38,8 +38,9 @@ function App() {
             </Background>
           </Theme>
         <Routes>
-          <Route path='/dashboard' element={<DashBoard themeToUse={currentTheme}/>}/>
           <Route exact path='/' element={<Main themeToUse={currentTheme}/>}/>
+          <Route path='/dashboard' element={<DashBoard themeToUse={currentTheme}/>}/>
+          <Route path='/home' element={<Main themeToUse={currentTheme}/>}/>
         </Routes>
       </BrowserRouter>
     </>
