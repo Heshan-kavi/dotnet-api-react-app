@@ -15,3 +15,8 @@ export const P = styled.p`
     font-size: ${({ theme }) => theme.fontSize.md};
     color: ${({ theme }) => theme.color.fontcolor}
 `;
+
+export const Div = styled.div`
+  marginBottom: 0;
+  color: ${({ theme }) => theme.color.fontcolor};
+`;

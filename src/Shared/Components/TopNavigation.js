@@ -49,7 +49,7 @@ function TopNavigation(){
             <AnchorTag ><FaIcons.FaBars/></AnchorTag>
             <LinkTag to="/dashboard">DashBoard</LinkTag>
             <LinkTag to="/home">Home</LinkTag>
-            <AnchorTag href="#news">about</AnchorTag>
+            <LinkTag to="/piecharts">PieCharts</LinkTag>
             <AnchorTag href="#news">help</AnchorTag>
             <Outlet/>
       </TopNavigationBar>

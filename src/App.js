@@ -8,6 +8,7 @@ import { H1 } from './Shared/Components/TextContent';
 import { PrimaryButton } from './Shared/Components/Buttons';
 import DashBoard from './Pages/Dashboard';
 import TopNavigation from './Shared/Components/TopNavigation';
+import AllPieCharts from './Pages/AllPieCharts';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
           <Route exact path='/' element={<Main themeToUse={currentTheme}/>}/>
           <Route path='/dashboard' element={<DashBoard themeToUse={currentTheme}/>}/>
           <Route path='/home' element={<Main themeToUse={currentTheme}/>}/>
+          <Route path='/piecharts' element={<AllPieCharts themeToUse={currentTheme}/>}/>
         </Routes>
       </BrowserRouter>
     </>
