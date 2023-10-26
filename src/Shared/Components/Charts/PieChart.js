@@ -100,6 +100,7 @@ export function TwoLevelPieChart (props){
               fill="#8884d8"
               stroke={GetTheTheme().color.background}
               outline="none"
+              animationDuration={500}
           />
           <Pie
               data={props.data02}
@@ -111,6 +112,7 @@ export function TwoLevelPieChart (props){
               fill="#82ca9d"
               stroke={GetTheTheme().color.background}
               outline="none"
+              animationDuration={500}
               label
           />
         </PieChart>
@@ -132,6 +134,7 @@ export function StraightAnglePieChart(props) {
             fill="#8884d8"
             stroke={GetTheTheme().color.background}
             label
+            animationDuration={500}
           />
         </PieChart>
       </ResponsiveContainer>
@@ -161,6 +164,7 @@ export function CustomActiveShapePieChart (props) {
             stroke={GetTheTheme().color.background}
             dataKey="value"
             onMouseEnter={onPieEnter}
+            animationDuration={500}
           />
         </PieChart>
       </ResponsiveContainer>
