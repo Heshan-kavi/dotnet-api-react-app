@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from "react";
-import Theme from './Shared/Components/Theme';
+import {customizedTheme} from './Shared/Components/Theme';
 import Background from './Shared/Components/BackGround';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './Pages/Main';
@@ -10,6 +10,8 @@ import DashBoard from './Pages/Dashboard';
 import TopNavigation from './Shared/Components/TopNavigation';
 import AllPieCharts from './Pages/AllPieCharts';
 import UserProfile from './Pages/UserProfile';
+import { StyleSheetManager, ThemeProvider } from "styled-components";
+import isValidProp from '@emotion/is-prop-valid';
 
 function App() {
 
@@ -21,33 +23,32 @@ function App() {
     }else{
       setCurrentTheme("light");
     }
-    localStorage.setItem("current-theme", JSON.stringify(currentTheme));
   }
 
   return (
-    <>
-      <BrowserRouter>
-          <Theme theme={currentTheme}>
-            <Background className='App'>
-              <H1>
-                Top navigation
-              </H1>
-              <TopNavigation/>
-              <H1>
-                  Theme Changing
-              </H1>
-              <PrimaryButton onClick={onThemeChangeButtonClicked}>To Change the Theme</PrimaryButton>
-            </Background>
-          </Theme>
-        <Routes>
-          <Route exact path='/' element={<Main themeToUse={currentTheme}/>}/>
-          <Route path='/dashboard' element={<DashBoard themeToUse={currentTheme}/>}/>
-          <Route path='/home' element={<Main themeToUse={currentTheme}/>}/>
-          <Route path='/piecharts' element={<AllPieCharts themeToUse={currentTheme}/>}/>
-          <Route path='/userprofile' element={<UserProfile themeToUse={currentTheme}/>}/>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <StyleSheetManager shouldForwardProp={active => isValidProp(active)}>
+      <ThemeProvider theme={customizedTheme[currentTheme]}>
+        <BrowserRouter>
+              <Background className='App'>
+                <H1>
+                  Top navigation
+                </H1>
+                <TopNavigation/>
+                <H1>
+                    Theme Changing
+                </H1>
+                <PrimaryButton onClick={onThemeChangeButtonClicked}>To Change the Theme</PrimaryButton>
+              </Background>
+          <Routes>
+            <Route exact path='/' element={<Main/>}/>
+            <Route path='/dashboard' element={<DashBoard />}/>
+            <Route path='/home' element={<Main />}/>
+            <Route path='/piecharts' element={<AllPieCharts />}/>
+            <Route path='/userprofile' element={<UserProfile />}/>
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </StyleSheetManager>
   );
 }
 
