@@ -1,7 +1,7 @@
 import React from "react";
 import Background from "../Shared/Components/BackGround";
 import { CardContainer, CardItem, CardSub, CardMoneyContainer, CardTitle } from "../Shared/Components/Card";
-import { TwoLevelPieChart } from "../Shared/Components/Charts/PieChart";
+import { TwoLevelPieChart, CustomActiveShapePieChart, StraightAnglePieChart } from "../Shared/Components/Charts/PieChart";
 import { Grid } from "../Shared/Components/Grid";
 import { Div, H2 } from "../Shared/Components/TextContent";
 import Theme from "../Shared/Components/Theme";
@@ -52,7 +52,17 @@ export default function DashBoard (props){
                         </CardItem>
                     ))}
                 </CardContainer>
-                <TwoLevelPieChart width="500" height="500" data01={data01} data02={data02} themeToUse={currentTheme}/>
+                <Grid columns={3} rowheight='400px'>
+                    <Div style={{marginBottom: 0}}>
+                    <TwoLevelPieChart width="500" height="400" data01={data01} data02={data02}></TwoLevelPieChart>
+                    </Div>
+                    <Div style={{marginBottom: 0}}>
+                    <StraightAnglePieChart width="500" height="400"></StraightAnglePieChart>
+                    </Div>
+                    <Div style={{marginBottom: 0}}>
+                    <CustomActiveShapePieChart width="500" height="400"></CustomActiveShapePieChart>
+                    </Div>
+                </Grid>
             </Background>
         </Theme>
     )
