@@ -90,10 +90,9 @@ const renderCustomizedLabelForCustomizedLabelPie = ({ cx, cy, midAngle, innerRad
 
 export function TwoLevelPieChart (props){
     return (
-      <ResponsiveContainer>
         <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
           <Pie
-              data={data01}
+              data={props.data01}
               dataKey="value"
               cx={200}
               cy={200}
@@ -103,7 +102,7 @@ export function TwoLevelPieChart (props){
               outline="none"
           />
           <Pie
-              data={data02}
+              data={props.data02}
               dataKey="value"
               cx={200}
               cy={200}
@@ -115,7 +114,6 @@ export function TwoLevelPieChart (props){
               label
           />
         </PieChart>
-      </ResponsiveContainer>
     )
 }
 
