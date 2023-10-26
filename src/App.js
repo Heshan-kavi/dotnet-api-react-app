@@ -7,6 +7,8 @@ import Main from './Pages/Main';
 import { H1 } from './Shared/Components/TextContent';
 import { PrimaryButton } from './Shared/Components/Buttons';
 import DashBoard from './Pages/Dashboard';
+import TopNavigation from './Shared/Components/TopNavigation';
+import AllPieCharts from './Pages/AllPieCharts';
 
 function App() {
 
@@ -27,14 +29,20 @@ function App() {
           <Theme theme={currentTheme}>
             <Background className='App'>
               <H1>
+                Top navigation
+              </H1>
+              <TopNavigation/>
+              <H1>
                   Theme Changing
               </H1>
               <PrimaryButton onClick={onThemeChangeButtonClicked}>To Change the Theme</PrimaryButton>
             </Background>
           </Theme>
         <Routes>
-          <Route path='/dashboard' element={<DashBoard themeToUse={currentTheme}/>}/>
           <Route exact path='/' element={<Main themeToUse={currentTheme}/>}/>
+          <Route path='/dashboard' element={<DashBoard themeToUse={currentTheme}/>}/>
+          <Route path='/home' element={<Main themeToUse={currentTheme}/>}/>
+          <Route path='/piecharts' element={<AllPieCharts themeToUse={currentTheme}/>}/>
         </Routes>
       </BrowserRouter>
     </>

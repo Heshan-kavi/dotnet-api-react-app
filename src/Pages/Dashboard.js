@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Background from "../Shared/Components/BackGround";
 import { H1 } from "../Shared/Components/TextContent";
 import Theme from "../Shared/Components/Theme";
@@ -8,6 +8,6 @@ export default function DashBoard (props){
     const currentTheme = props.themeToUse;
     
     return (
-        <Theme theme={currentTheme}><Background><H1>hello</H1></Background></Theme>
+        <Theme theme={currentTheme}><Background><H1>this is the dashboard page</H1></Background></Theme>
     )
 }
