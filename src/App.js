@@ -9,6 +9,7 @@ import { PrimaryButton } from './Shared/Components/Buttons';
 import DashBoard from './Pages/Dashboard';
 import TopNavigation from './Shared/Components/TopNavigation';
 import AllPieCharts from './Pages/AllPieCharts';
+import UserProfile from './Pages/UserProfile';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
           <Route path='/dashboard' element={<DashBoard themeToUse={currentTheme}/>}/>
           <Route path='/home' element={<Main themeToUse={currentTheme}/>}/>
           <Route path='/piecharts' element={<AllPieCharts themeToUse={currentTheme}/>}/>
+          <Route path='/userprofile' element={<UserProfile themeToUse={currentTheme}/>}/>
         </Routes>
       </BrowserRouter>
     </>

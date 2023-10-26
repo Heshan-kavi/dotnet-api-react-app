@@ -50,7 +50,7 @@ function TopNavigation(){
             <LinkTag to="/dashboard">DashBoard</LinkTag>
             <LinkTag to="/home">Home</LinkTag>
             <LinkTag to="/piecharts">PieCharts</LinkTag>
-            <AnchorTag href="#news">help</AnchorTag>
+            <LinkTag to="/userprofile">Profile</LinkTag>
             <Outlet/>
       </TopNavigationBar>
     );
