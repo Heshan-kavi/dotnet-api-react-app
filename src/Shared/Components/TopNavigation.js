@@ -48,8 +48,8 @@ function TopNavigation(){
         <TopNavigationBar>
             <AnchorTag ><FaIcons.FaBars/></AnchorTag>
             <LinkTag to="/dashboard">DashBoard</LinkTag>
-            <AnchorTag href="#news">news</AnchorTag>
-            <AnchorTag href="#news">about</AnchorTag>
+            <LinkTag to="/home">Home</LinkTag>
+            <LinkTag to="/piecharts">PieCharts</LinkTag>
             <AnchorTag href="#news">help</AnchorTag>
             <Outlet/>
       </TopNavigationBar>
