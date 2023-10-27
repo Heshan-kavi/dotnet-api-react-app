@@ -90,10 +90,9 @@ const renderCustomizedLabelForCustomizedLabelPie = ({ cx, cy, midAngle, innerRad
 
 export function TwoLevelPieChart (props){
     return (
-      <ResponsiveContainer>
         <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
           <Pie
-              data={data01}
+              data={props.data01}
               dataKey="value"
               cx={200}
               cy={200}
@@ -101,9 +100,10 @@ export function TwoLevelPieChart (props){
               fill="#8884d8"
               stroke={GetTheTheme().color.background}
               outline="none"
+              animationDuration={500}
           />
           <Pie
-              data={data02}
+              data={props.data02}
               dataKey="value"
               cx={200}
               cy={200}
@@ -112,10 +112,10 @@ export function TwoLevelPieChart (props){
               fill="#82ca9d"
               stroke={GetTheTheme().color.background}
               outline="none"
+              animationDuration={500}
               label
           />
         </PieChart>
-      </ResponsiveContainer>
     )
 }
 
@@ -134,6 +134,7 @@ export function StraightAnglePieChart(props) {
             fill="#8884d8"
             stroke={GetTheTheme().color.background}
             label
+            animationDuration={500}
           />
         </PieChart>
       </ResponsiveContainer>
@@ -163,6 +164,7 @@ export function CustomActiveShapePieChart (props) {
             stroke={GetTheTheme().color.background}
             dataKey="value"
             onMouseEnter={onPieEnter}
+            animationDuration={500}
           />
         </PieChart>
       </ResponsiveContainer>
