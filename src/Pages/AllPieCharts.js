@@ -12,6 +12,26 @@ import { H2, Div } from "../Shared/Components/TextContent";
 
 export default function AllPieCharts (props){
 
+    const data01 = [
+        { name: "Group A", value: 400 },
+        { name: "Group B", value: 300 },
+        { name: "Group C", value: 300 },
+        { name: "Group D", value: 200 }
+      ];
+      const data02 = [
+        { name: "A1", value: 100 },
+        { name: "A2", value: 300 },
+        { name: "B1", value: 100 },
+        { name: "B2", value: 80 },
+        { name: "B3", value: 40 },
+        { name: "B4", value: 30 },
+        { name: "B5", value: 50 },
+        { name: "C1", value: 100 },
+        { name: "C2", value: 200 },
+        { name: "D1", value: 150 },
+        { name: "D2", value: 50 }
+      ];
+
     const columns = 3;
     const rowheight = '400px';
     const currentTheme = props.themeToUse;
@@ -25,7 +45,7 @@ export default function AllPieCharts (props){
                 <Grid columns={columns} rowheight={rowheight}>
                     <Div style={{marginBottom: 0}}>
                     <p>Two Level Pie Chart</p>
-                    <TwoLevelPieChart width="500" height="400"></TwoLevelPieChart>
+                    <TwoLevelPieChart width="500" height="400" data01={data01} data02={data02}></TwoLevelPieChart>
                     </Div>
                     <Div style={{marginBottom: 0}}>
                     <p>Straight Angle Pie Chart</p>
