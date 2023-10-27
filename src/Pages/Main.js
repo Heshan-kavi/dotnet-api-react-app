@@ -2,16 +2,12 @@ import React from "react";
 import { H1, H2, P } from '../Shared/Components/TextContent';
 import { PrimaryButton, SecondaryButton, LoginButton, SignupButton } from '../Shared/Components/Buttons';
 import SideNavigation from '../Shared/Components/SideNavigation';
-import Theme from "../Shared/Components/Theme";
 import Background from "../Shared/Components/BackGround";
 
 export default function Main (props){
 
-    const currentTheme = props.themeToUse;
-
     return (
-        <Theme theme={currentTheme}>
-            <Background>
+        <Background>
                 <H1>
                     Side navigation
                 </H1>
@@ -45,6 +41,5 @@ export default function Main (props){
                     Charts
                 </H1>
             </Background>
-        </Theme>
     )
 }
