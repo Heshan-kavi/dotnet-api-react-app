@@ -1,5 +1,4 @@
 import React from "react";
-import Theme from "../Shared/Components/Theme";
 import Background from "../Shared/Components/BackGround";
 import {  TwoLevelPieChart, 
           StraightAnglePieChart, 
@@ -34,10 +33,8 @@ export default function AllPieCharts (props){
 
     const columns = 3;
     const rowheight = '400px';
-    const currentTheme = props.themeToUse;
     
     return (
-        <Theme theme={currentTheme}>
             <Background>
                 <H2>
                     Piecharts
@@ -69,6 +66,5 @@ export default function AllPieCharts (props){
                     </Div>
                 </Grid>
             </Background>
-        </Theme>
     )
 }

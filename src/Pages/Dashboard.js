@@ -4,7 +4,6 @@ import { CardContainer, CardItem, CardSub, CardMoneyContainer, CardTitle } from 
 import { TwoLevelPieChart, CustomActiveShapePieChart, StraightAnglePieChart } from "../Shared/Components/Charts/PieChart";
 import { Grid } from "../Shared/Components/Grid";
 import { Div, H2 } from "../Shared/Components/TextContent";
-import Theme from "../Shared/Components/Theme";
 
 const featuredData = [
     {title: "Revenue", money: "$3,300", moneyRate: "+12.4"},
@@ -35,10 +34,7 @@ const data01 = [
 
 export default function DashBoard (props){
 
-    const currentTheme = props.themeToUse;
-    
     return (
-        <Theme theme={currentTheme}>
             <Background>
                 <CardContainer>
                     {featuredData && featuredData.map((item, index) => (
@@ -64,6 +60,5 @@ export default function DashBoard (props){
                     </Div>
                 </Grid>
             </Background>
-        </Theme>
     )
 }
