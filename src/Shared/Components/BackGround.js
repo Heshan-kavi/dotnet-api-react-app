@@ -6,6 +6,7 @@ const Background = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: ${({ theme }) => theme.color.background};
+    max-width: 100%;
 `;
 
 export default Background;
