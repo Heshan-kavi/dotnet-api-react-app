@@ -99,7 +99,6 @@ export const PricingCardInfo = styled.div`
 	width: 280px;
 	text-decoration: none;
 	height: 100%;
-
 	display: flex;
 	flex-direction: column;
 	padding: 24px;

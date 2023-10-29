@@ -113,6 +113,7 @@ export const Button = styled.button`
 	cursor: pointer;
 	overflow: hidden;
 	position: relative;
+    font-family: Fjalla One;
 
 	&:before {
 		background: ${({ theme }) => theme.colors.background};
