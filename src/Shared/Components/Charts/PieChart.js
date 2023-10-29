@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { PieChart, Pie, ResponsiveContainer, Sector, Cell } from "recharts";
+import { PieChart, Pie, ResponsiveContainer, Sector, Cell, Tooltip } from "recharts";
 import { useTheme } from "styled-components";
 
 const data01 = [
@@ -90,52 +90,56 @@ const renderCustomizedLabelForCustomizedLabelPie = ({ cx, cy, midAngle, innerRad
 
 export function TwoLevelPieChart (props){
     return (
-        <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
-          <Pie
-              data={props.data01}
-              dataKey="value"
-              cx="50%"
-              cy="50%"
-              outerRadius="40%"
-              fill="#8884d8"
-              stroke={GetTheTheme().color.background}
-              outline="none"
-              animationDuration={500}
-          />
-          <Pie
-              data={props.data02}
-              dataKey="value"
-              cx="50%"
-              cy="50%"
-              innerRadius="50%"
-              outerRadius="60%"
-              fill="#82ca9d"
-              stroke={GetTheTheme().color.background}
-              outline="none"
-              animationDuration={500}
-              label
-          />
-        </PieChart>
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart >
+            <Pie
+                data={props.data01}
+                dataKey="value"
+                cx="50%"
+                cy="50%"
+                outerRadius="40%"
+                fill="#8884d8"
+                stroke={GetTheTheme().color.background}
+                outline="none"
+                animationDuration={500}
+            />
+            <Pie
+                data={props.data02}
+                dataKey="value"
+                cx="50%"
+                cy="50%"
+                innerRadius="50%"
+                outerRadius="60%"
+                fill="#82ca9d"
+                stroke={GetTheTheme().color.background}
+                outline="none"
+                animationDuration={500}
+                label
+            />
+          </PieChart>
+        </ResponsiveContainer>
     )
 }
 
 export function StraightAnglePieChart(props) {
   return (
-        <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
-          <Pie
-            dataKey="value"
-            startAngle={180}
-            endAngle={0}
-            data={data01}
-            cx="50%"
-            cy="50%"
-            outerRadius="80%"
-            fill="#8884d8"
-            stroke={GetTheTheme().color.background}
-            label
-            animationDuration={500}
-          />
-        </PieChart>
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              dataKey="value"
+              startAngle={180}
+              endAngle={0}
+              data={data01}
+              cx="50%"
+              cy="50%"
+              outerRadius="60%"
+              fill="#8884d8"
+              stroke={GetTheTheme().color.background}
+              label
+              animationDuration={500}
+            />
+          </PieChart>
+        </ResponsiveContainer>
   );
 }
 
@@ -148,22 +152,24 @@ export function CustomActiveShapePieChart (props) {
   };
 
   return (
-        <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
-          <Pie
-            activeIndex={activeIndex}
-            activeShape={renderActiveShapeForActiveShapePie}
-            data={data01}
-            cx="50%"
-            cy="50%"
-            innerRadius="60%"
-            outerRadius="80%"
-            fill="#8884d8"
-            stroke={GetTheTheme().color.background}
-            dataKey="value"
-            onMouseEnter={onPieEnter}
-            animationDuration={500}
-          />
-        </PieChart>
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              activeIndex={activeIndex}
+              activeShape={renderActiveShapeForActiveShapePie}
+              data={data01}
+              cx="50%"
+              cy="50%"
+              innerRadius="25%"
+              outerRadius="30%"
+              fill="#8884d8"
+              stroke={GetTheTheme().color.background}
+              dataKey="value"
+              onMouseEnter={onPieEnter}
+              animationDuration={500}
+            />
+          </PieChart>
+        </ResponsiveContainer>
   );
 }
 
@@ -193,8 +199,8 @@ export function PieChartWithCustomizedLabel (props) {
 
 export function PieChartWithPaddingAngleFull (props){
   return (
-    <ResponsiveContainer>
-      <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
+    <ResponsiveContainer width="90%" height="90%">
+      <PieChart>
         <Pie
           data={data01}
           cx="50%"
