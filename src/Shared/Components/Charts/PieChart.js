@@ -94,9 +94,9 @@ export function TwoLevelPieChart (props){
           <Pie
               data={props.data01}
               dataKey="value"
-              cx={200}
-              cy={200}
-              outerRadius={60}
+              cx="50%"
+              cy="50%"
+              outerRadius="40%"
               fill="#8884d8"
               stroke={GetTheTheme().color.background}
               outline="none"
@@ -105,10 +105,10 @@ export function TwoLevelPieChart (props){
           <Pie
               data={props.data02}
               dataKey="value"
-              cx={200}
-              cy={200}
-              innerRadius={70}
-              outerRadius={90}
+              cx="50%"
+              cy="50%"
+              innerRadius="50%"
+              outerRadius="60%"
               fill="#82ca9d"
               stroke={GetTheTheme().color.background}
               outline="none"
@@ -121,7 +121,6 @@ export function TwoLevelPieChart (props){
 
 export function StraightAnglePieChart(props) {
   return (
-      <ResponsiveContainer width="100%" height="100%">
         <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
           <Pie
             dataKey="value"
@@ -130,14 +129,13 @@ export function StraightAnglePieChart(props) {
             data={data01}
             cx="50%"
             cy="50%"
-            outerRadius={80}
+            outerRadius="80%"
             fill="#8884d8"
             stroke={GetTheTheme().color.background}
             label
             animationDuration={500}
           />
         </PieChart>
-      </ResponsiveContainer>
   );
 }
 
@@ -150,7 +148,6 @@ export function CustomActiveShapePieChart (props) {
   };
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
         <PieChart width={parseInt(props.width)} height={parseInt(props.height)}>
           <Pie
             activeIndex={activeIndex}
@@ -158,8 +155,8 @@ export function CustomActiveShapePieChart (props) {
             data={data01}
             cx="50%"
             cy="50%"
-            innerRadius={60}
-            outerRadius={80}
+            innerRadius="60%"
+            outerRadius="80%"
             fill="#8884d8"
             stroke={GetTheTheme().color.background}
             dataKey="value"
@@ -167,7 +164,6 @@ export function CustomActiveShapePieChart (props) {
             animationDuration={500}
           />
         </PieChart>
-      </ResponsiveContainer>
   );
 }
 
