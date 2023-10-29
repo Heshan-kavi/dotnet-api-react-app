@@ -10,8 +10,16 @@ import DashBoard from './Pages/Dashboard';
 import TopNavigation from './Shared/Components/TopNavigation';
 import AllPieCharts from './Pages/AllPieCharts';
 import UserProfile from './Pages/UserProfile';
-import { StyleSheetManager, ThemeProvider } from "styled-components";
+import styled, { StyleSheetManager, ThemeProvider } from "styled-components";
 import isValidProp from '@emotion/is-prop-valid';
+import GlobalStyle from './globalStyles';
+
+const ThemeButton = styled(PrimaryButton)`
+  &:hover{
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.color.background}
+  }
+`;
 
 function App() {
 
@@ -28,6 +36,7 @@ function App() {
   return (
     <StyleSheetManager shouldForwardProp={active => isValidProp(active)}>
       <ThemeProvider theme={customizedTheme[currentTheme]}>
+        <GlobalStyle/>
         <BrowserRouter>
               <Background className='App'>
                 <H1>
@@ -37,7 +46,7 @@ function App() {
                 <H1>
                     Theme Changing
                 </H1>
-                <PrimaryButton onClick={onThemeChangeButtonClicked}>To Change the Theme</PrimaryButton>
+                <ThemeButton onClick={onThemeChangeButtonClicked}>To Change the Theme</ThemeButton>
               </Background>
           <Routes>
             <Route exact path='/' element={<Main/>}/>

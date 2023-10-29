@@ -1,7 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Button, Heading, TextWrapper } from "../globalStyles";
+import { Heading, TextWrapper } from "../globalStyles";
 import { IconContext } from 'react-icons/lib';
+import { PrimaryButton } from "../Shared/Components/Buttons";
 
 const pricingData = [
 	{
@@ -99,21 +100,11 @@ export const PricingCardInfo = styled.div`
 	width: 280px;
 	text-decoration: none;
 	height: 100%;
-
 	display: flex;
 	flex-direction: column;
 	padding: 24px;
 	color: ${({ theme }) => theme.colors.fontcolor};
 	margin: auto;
-	> button {
-		margin-top: auto;
-
-		&:hover {
-            color: ${({ theme }) => theme.colors.background};
-			background: ${({ theme }) => theme.colors.primary};
-			transition: background 0.3s ease;
-		}
-	}
 
 	@media screen and (max-width: 768px) {
 		width: 90%;
@@ -121,6 +112,15 @@ export const PricingCardInfo = styled.div`
 		&:hover {
 			transform: none;
 		}
+	}
+`;
+
+export const PricingButton = styled(PrimaryButton)`
+	margin-top: auto;
+
+	&:hover{
+		background-color: ${({ theme }) => theme.colors.primary};
+		color: ${({ theme }) => theme.color.background}
 	}
 `;
 
@@ -190,7 +190,7 @@ function UserProfile(){
 											</PricingCardFeature>
 										))}
 									</PricingCardFeatures>
-									<Button>Get Started</Button>
+									<PricingButton>Get Started</PricingButton>
 								</PricingCardInfo>
 							</PricingCard>
 						))}
