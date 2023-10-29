@@ -12,6 +12,7 @@ import AllPieCharts from './Pages/AllPieCharts';
 import UserProfile from './Pages/UserProfile';
 import styled, { StyleSheetManager, ThemeProvider } from "styled-components";
 import isValidProp from '@emotion/is-prop-valid';
+import GlobalStyle from './globalStyles';
 
 const ThemeButton = styled(PrimaryButton)`
   &:hover{
@@ -35,6 +36,7 @@ function App() {
   return (
     <StyleSheetManager shouldForwardProp={active => isValidProp(active)}>
       <ThemeProvider theme={customizedTheme[currentTheme]}>
+        <GlobalStyle/>
         <BrowserRouter>
               <Background className='App'>
                 <H1>
