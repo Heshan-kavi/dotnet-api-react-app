@@ -3,9 +3,8 @@ import { styled, createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   *{
     box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	padding: 0;
   }
 `;
 
@@ -113,6 +112,7 @@ export const Button = styled.button`
 	cursor: pointer;
 	overflow: hidden;
 	position: relative;
+    font-family: Fjalla One;
 
 	&:before {
 		background: ${({ theme }) => theme.colors.background};
