@@ -1,9 +1,10 @@
 import React from "react";
-import Background from "../Shared/Components/BackGround";
+import { styled } from "styled-components";
+import { TextWrapper } from "../globalStyles";
 import { CardContainer, CardItem, CardSub, CardMoneyContainer, CardTitle } from "../Shared/Components/Card";
 import { TwoLevelPieChart, CustomActiveShapePieChart, StraightAnglePieChart } from "../Shared/Components/Charts/PieChart";
 import { Grid } from "../Shared/Components/Grid";
-import { Div, H2 } from "../Shared/Components/TextContent";
+import { Div } from "../Shared/Components/TextContent";
 
 const featuredData = [
     {title: "Revenue", money: "$3,300", moneyRate: "+12.4"},
@@ -32,33 +33,166 @@ const data01 = [
     { name: "D2", value: 50 }
   ];
 
+  var chartHeight = 0;
+  var charWidth = 0;
+
+export const DashboardSection = styled.div`
+  display : flex;
+  padding: 50px 20px;
+  flex-direction : column;
+  background: ${({ theme }) => theme.color.background};
+  align-items: center;
+`;
+
+export const DashboardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 500px){
+    width: 90%;
+  }
+`;
+
+export const DetailsContainer = styled.div`
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: ${({mg_top}) => mg_top ? mg_top : ''};
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const DetailsCard = styled.div`
+    padding: 30px;
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+    margin: 0.7rem;
+
+    @media screen and (max-width: 500px) {
+        width: 90%;
+    }
+
+    @media screen and (min-width: 1024px){
+        padding-right: 100px;
+        padding-left: 100px;
+    }
+
+    &:hover{
+        background: ${({ theme }) => theme.colors.primary};
+        @media screen and (min-width: 500px) {
+            transform: scale(1.06);
+        }
+        > span {
+            color: ${({ theme }) => theme.color.background};
+        }
+        > p {
+            color: ${({ theme }) => theme.color.background};
+        }
+    }
+`;
+
+export const DetailsCardTitle = styled.span`
+    color: ${({ theme }) => theme.color.fontcolor};
+    font-size: 16px;
+
+    @media screen and (min-width: 500px) {
+        font-size: 18px;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 22px;
+    }
+`;
+
+export const DetailsCardValue = styled.p`
+    color: ${({ theme }) => theme.color.fontcolor};
+    font-size: 24px;
+    margin: 12px 0px;
+
+    @media screen and (min-width: 500px) {
+        font-size: 26px;
+        margin: 15px 0px;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 30px;
+        margin: 18px 0px;
+
+    .featuredMoneyRate{
+        font-size: 16px;
+        margin-left: 22px;
+
+        @media screen and (min-width: 500px) {
+            font-size: 18px;
+        }
+    
+        @media screen and (min-width: 768px) {
+            font-size: 22px;
+        }
+    }
+`;
+
+export const DetailsCardPara = styled.p`
+    color: ${({ theme }) => theme.color.fontcolor};
+    font-size: 14px;
+
+    @media screen and (min-width: 500px) {
+        font-size: 16px;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 18px;
+    }
+`;
+
+export const ChartsCard = styled.div`
+    width: 300px;
+    height: 300px;
+    text-align: -webkit-center;
+    padding-top: ${({pd_top}) => pd_top ? pd_top : ''};
+    padding-right: ${({pd_right}) => pd_right ? pd_right : ''};
+
+    @media screen and (min-width: 768px) {
+        width: 400px;
+        height: 400px;
+    }
+`;
+
 export default function DashBoard (props){
 
     return (
-            <Background>
-                <CardContainer>
-                    {featuredData && featuredData.map((item, index) => (
-                        <CardItem key={index}>
-                            <CardTitle>{item.title}</CardTitle>
-                            <CardMoneyContainer>
-                                <span className="featuredMoney">{item.money}</span>
-                                <span className="featuredMoneyRate">{item.moneyRate}</span>
-                            </CardMoneyContainer>
-                            <CardSub>this is the new rates</CardSub>
-                        </CardItem>
-                    ))}
-                </CardContainer>
-                <Grid columns={3} rowheight='400px'>
-                    <Div style={{marginBottom: 0}}>
-                    <TwoLevelPieChart width="500" height="400" data01={data01} data02={data02}></TwoLevelPieChart>
-                    </Div>
-                    <Div style={{marginBottom: 0}}>
-                    <StraightAnglePieChart width="500" height="400"></StraightAnglePieChart>
-                    </Div>
-                    <Div style={{marginBottom: 0}}>
-                    <CustomActiveShapePieChart width="500" height="400"></CustomActiveShapePieChart>
-                    </Div>
-                </Grid>
-            </Background>
+            <DashboardSection>
+                <DashboardWrapper>
+                    <DetailsContainer>
+                        {featuredData && featuredData.map((item, index) => (
+                            <DetailsCard key={index}>
+                                <DetailsCardTitle>{item.title}</DetailsCardTitle>
+                                <DetailsCardValue>
+                                    <span className="featuredMoney">{item.money}</span>
+                                    <span className="featuredMoneyRate">{item.moneyRate}</span>
+                                </DetailsCardValue>
+                                <DetailsCardPara>this is the new rates</DetailsCardPara>
+                            </DetailsCard>
+                        ))}
+                    </DetailsContainer>
+                    <DetailsContainer mg_top="20px">
+                        <ChartsCard>
+                            <TwoLevelPieChart width="300" height="300" data01={data01} data02={data02}></TwoLevelPieChart>
+                        </ChartsCard>
+                        <ChartsCard pd_top="30px" pd_right="30px">
+                            <StraightAnglePieChart width="300" height="300"></StraightAnglePieChart>
+                        </ChartsCard>
+                        <ChartsCard>
+                            <CustomActiveShapePieChart width="300" height="300"></CustomActiveShapePieChart>
+                        </ChartsCard>
+                    </DetailsContainer>
+                </DashboardWrapper>
+            </DashboardSection>
     )
 }
