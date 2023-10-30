@@ -62,9 +62,7 @@ export const DetailsContainer = styled.div`
   margin-top: ${({mg_top}) => mg_top ? mg_top : ''};
 
   @media screen and (max-width: 500px) {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 `;
@@ -152,15 +150,18 @@ export const DetailsCardPara = styled.p`
 `;
 
 export const ChartsCard = styled.div`
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     text-align: -webkit-center;
     padding-top: ${({pd_top}) => pd_top ? pd_top : ''};
-    padding-right: ${({pd_right}) => pd_right ? pd_right : ''};
 
-    @media screen and (min-width: 768px) {
-        width: 400px;
-        height: 400px;
+    @media screen and (max-width: 768px) {
+        width: 300px;
+        height: 300px;
+
+    @media screen and (max-width: 500px) {
+        width: 200px;
+        height: 200px;
     }
 `;
 
@@ -183,13 +184,13 @@ export default function DashBoard (props){
                     </DetailsContainer>
                     <DetailsContainer mg_top="20px">
                         <ChartsCard>
-                            <TwoLevelPieChart width="300" height="300" data01={data01} data02={data02}></TwoLevelPieChart>
+                            <TwoLevelPieChart data01={data01} data02={data02}></TwoLevelPieChart>
                         </ChartsCard>
-                        <ChartsCard pd_top="30px" pd_right="30px">
-                            <StraightAnglePieChart width="300" height="300"></StraightAnglePieChart>
+                        <ChartsCard pd_top="50px">
+                            <StraightAnglePieChart></StraightAnglePieChart>
                         </ChartsCard>
                         <ChartsCard>
-                            <CustomActiveShapePieChart width="300" height="300"></CustomActiveShapePieChart>
+                            <CustomActiveShapePieChart></CustomActiveShapePieChart>
                         </ChartsCard>
                     </DetailsContainer>
                 </DashboardWrapper>
