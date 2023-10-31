@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { TextWrapper } from "../globalStyles";
 import { CardContainer, CardItem, CardSub, CardMoneyContainer, CardTitle } from "../Shared/Components/Card";
+import { StackedAreaChart } from "../Shared/Components/Charts/AreaChart";
 import { TwoLevelPieChart, CustomActiveShapePieChart, StraightAnglePieChart } from "../Shared/Components/Charts/PieChart";
 import { Grid } from "../Shared/Components/Grid";
 import { Div } from "../Shared/Components/TextContent";
@@ -150,18 +151,18 @@ export const DetailsCardPara = styled.p`
 `;
 
 export const ChartsCard = styled.div`
-    width: 400px;
-    height: 400px;
+    width: ${({width}) => width ? width : "400px"};
+    height: ${({height}) => height ? height : "400px"};
     text-align: -webkit-center;
     padding-top: ${({pd_top}) => pd_top ? pd_top : ''};
 
     @media screen and (max-width: 768px) {
-        width: 300px;
-        height: 300px;
+        width: ${({width}) => width ? width : "300px"};
+        height: ${({height}) => height ? height : "300px"};
 
     @media screen and (max-width: 500px) {
-        width: 200px;
-        height: 200px;
+        width: ${({width}) => width ? width : "200px"};
+        height: ${({height}) => height ? height : "200px"};
     }
 `;
 
@@ -191,6 +192,11 @@ export default function DashBoard (props){
                         </ChartsCard>
                         <ChartsCard>
                             <CustomActiveShapePieChart></CustomActiveShapePieChart>
+                        </ChartsCard>
+                    </DetailsContainer>
+                    <DetailsContainer mg_top="20px">
+                        <ChartsCard width="80%" height="80%">
+                            <StackedAreaChart></StackedAreaChart>
                         </ChartsCard>
                     </DetailsContainer>
                 </DashboardWrapper>
